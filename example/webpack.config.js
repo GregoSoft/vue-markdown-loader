@@ -1,5 +1,6 @@
 var resolve = require("path").resolve;
 var webpack = require("webpack");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: "./src/entry.js",
@@ -36,5 +37,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true
-  }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 };
